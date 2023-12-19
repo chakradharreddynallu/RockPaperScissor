@@ -47,9 +47,18 @@ while True:
                         playerMove = 2
                     if fingers == [0, 1, 1, 0, 0]:
                         playerMove = 3
+                    
+                    if playerMove==1:
+                        randomNumber=2
+                        imgAI = cv2.imread(f'Resources/{randomNumber}.png', cv2.IMREAD_UNCHANGED)
+                    if playerMove==2:
+                        randomNumber=3
+                        imgAI = cv2.imread(f'Resources/{randomNumber}.png', cv2.IMREAD_UNCHANGED)                     
+                    if playerMove==3:
+                        randomNumber=1
+                        imgAI = cv2.imread(f'Resources/{randomNumber}.png', cv2.IMREAD_UNCHANGED)   
 
-                    randomNumber = random.randint(1, 3)
-                    imgAI = cv2.imread(f'Resources/{randomNumber}.png', cv2.IMREAD_UNCHANGED)
+                  
                     imgBG = cvzone.overlayPNG(imgBG, imgAI, (149, 310))
 
                     # Player Wins
